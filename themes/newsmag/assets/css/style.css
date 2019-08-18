@@ -2951,7 +2951,6 @@ a:hover, a:active {
 }
 .newsmag_builder .newsmag-blog-post-layout-banner .banner-content h3 a:hover, .newsmag_builder .newsmag-blog-post-layout-banner .banner-content h3 a:focus {
   color: #2f3759;
-  text-shadow: 1px 1px 2px rgba(255, 61, 46, 0.3);
 }
 .newsmag_builder .newsmag-blog-post-layout-banner .banner-content .meta {
   font-size: 14px;
