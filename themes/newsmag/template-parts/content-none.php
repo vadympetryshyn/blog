@@ -11,7 +11,7 @@
 
 <section class="no-results col-xs-12 not-found">
 	<header class="page-header">
-		<h3 class="page-title"><span><?php esc_html_e( 'Nothing Found', 'newsmag' ); ?></span></h3>
+		<h3 class="page-title"><span>Ничего не найдено</span></h3>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -23,14 +23,14 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'newsmag' ); ?></p>
+			<p><?php esc_html_e( 'Извините, но ничего не соответствует вашим условиям поиска. Пожалуйста, попытайтесь снова с другими ключевыми словами.', 'newsmag' ); ?></p>
 			<?php
 			get_search_form();
 
 		else :
 		?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'newsmag' ); ?></p>
+			<p><?php esc_html_e( 'Кажется, мы не можем найти то, что вы ищете. Возможно, поиск может помочь.', 'newsmag' ); ?></p>
 			<?php
 			get_search_form();
 

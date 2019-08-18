@@ -97,7 +97,7 @@ class Newsmag_Breadcrumbs {
 		$this->search_prefix          = $defaults['search_prefix'];
 		$this->error_prefix           = $defaults['error_prefix'];
 
-		$this->home_label = __( 'Home ', 'newsmag' );
+		$this->home_label = __( 'Главная ', 'newsmag' );
 	}
 
 	/**

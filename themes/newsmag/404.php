@@ -15,11 +15,11 @@ get_header(); ?>
 
 				<section class="error-404 not-found">
 					<header class="page-header">
-						<h1><?php _e( 'Oops! That page can&rsquo;t be found.', 'newsmag' ); ?></h1>
+						<h1><?php _e( 'Страница не найдена.', 'newsmag' ); ?></h1>
 					</header><!-- .page-header -->
 
 					<div class="page-content">
-						<p><?php _e( 'It looks like nothing was found at this location. Maybe try a better search?', 'newsmag' ); ?></p>
+						<p><?php _e( 'Похоже, что ничего не было найдено в этом месте. Может быть, попробуйте поискать лучше?', 'newsmag' ); ?></p>
 
 						<?php get_search_form(); ?>
 
