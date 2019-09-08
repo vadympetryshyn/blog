@@ -22,7 +22,7 @@ if ( ! empty( $img ) ) :
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'newsmag' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+					<h1 class="page-title"><?php printf( esc_html__( 'Результат поиска для: %s', 'newsmag' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				</div>
 			</div>
 		</div>

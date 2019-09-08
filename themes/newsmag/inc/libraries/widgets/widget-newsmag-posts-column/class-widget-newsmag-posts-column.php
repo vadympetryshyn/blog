@@ -219,8 +219,8 @@ class Widget_Newsmag_Posts_Column extends WP_Widget {
 
 			$sticky->posts[] = $post;
 		}
-
-		$sticky->posts      = array_slice( $sticky->posts, 0, (int) $args['show_post'] );
+        $skip_one_if_last = $args['title'] === 'Последние публикации' ? 1 : 0;
+		$sticky->posts      = array_slice( $sticky->posts, $skip_one_if_last, (int) $args['show_post'] );
 		$sticky->post_count = count( $sticky->posts );
 
 		return $sticky;

@@ -11,7 +11,7 @@ if ( $posts->have_posts() ) : ?>
 			<?php
 			if ( ! empty( $instance['title'] ) ) {
 				?>
-				<span><?php echo esc_html( $instance['title'] ); ?></span>
+				<a href="<?php echo esc_url( get_category_link( $id_obj->term_id ) ); ?>"><?php echo esc_html( $instance['title'] ); ?></a>
 				<?php
 			} else {
 				?>
@@ -39,7 +39,7 @@ if ( $posts->have_posts() ) : ?>
 			$category = get_the_category();
 			?>
 
-			<div class="newsmag-blog-post-layout-banner <?php echo ( $posts->post_count > 4 ) ? 'col-md-3' : 'col-md-6'; ?>">
+			<div class="newsmag-blog-post-layout-banner <?php echo ( $posts->post_count > 4 ) ? 'col-md-3' : 'col-md-3'; ?>">
 				<a href="<?php echo esc_url_raw( get_the_permalink() ); ?>">
 					<?php echo wp_kses( $image['image'], $image['tags'] ); ?>
 				</a>

@@ -78,10 +78,16 @@ endif;
 				?>
 				<?php if ( $newsmag_show_banner ) : ?>
 					<div class="col-md-8 header-banner">
-						<?php
-						$banner = get_theme_mod( 'newsmag_banner_type', 'image' );
-						get_template_part( 'template-parts/banner/banner', $banner );
-						?>
+                        <!-- Прямоугольник внизу -->
+                        <ins class="adsbygoogle"
+                             style="display:block;"
+                             data-ad-client="ca-pub-6246813841140373"
+                             data-ad-slot="6458646421"
+                             data-ad-format="horizontal"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                          (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
 					</div>
 				<?php endif; ?>
 			</div>

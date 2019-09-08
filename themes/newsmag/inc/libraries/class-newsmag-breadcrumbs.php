@@ -78,10 +78,10 @@ class Newsmag_Breadcrumbs {
 			'separator'              => '/',
 			'show_post_type_archive' => '1',
 			'show_terms'             => get_theme_mod( 'newsmag_blog_breadcrumb_menu_post_category', true ),
-			'home_label'             => esc_html__( 'Home', 'newsmag' ),
-			'tag_archive_prefix'     => esc_html__( 'Tag:', 'newsmag' ),
-			'search_prefix'          => esc_html__( 'Search:', 'newsmag' ),
-			'error_prefix'           => esc_html__( '404 - Page not Found', 'newsmag' ),
+			'home_label'             => esc_html__( 'Главная', 'newsmag' ),
+			'tag_archive_prefix'     => esc_html__( '', 'newsmag' ),
+			'search_prefix'          => esc_html__( 'Поиск:', 'newsmag' ),
+			'error_prefix'           => esc_html__( '404 - страница не найдена', 'newsmag' ),
 		);
 
 		// Setup a filter for changeable variables and merge it with the defaults
@@ -368,7 +368,14 @@ class Newsmag_Breadcrumbs {
 			return $terms_markup;
 		}
 
-		$terms = wp_get_object_terms( $this->post->ID, $taxonomy );
+        function array_remove_object(&$array, $value, $prop)
+        {
+            return array_filter($array, function($a) use($value, $prop) {
+                return $a->$prop !== $value;
+            });
+        }
+
+		$terms = array_remove_object(wp_get_object_terms( $this->post->ID, $taxonomy ), 161, 'term_id');
 
 		// If post does not have any terms assigned; possible e.g. portfolio posts
 		if ( empty( $terms ) ) {
@@ -426,14 +433,14 @@ class Newsmag_Breadcrumbs {
 			// Loop through the rest of the terms, and add them to string comma separated
 			$max_index = count( $terms );
 			$i         = 0;
-			foreach ( $terms as $term ) {
 
+            foreach ( $terms as $term ) {
 				// For the last index also add the separator
-				if ( ++ $i == $max_index ) {
-					$terms_markup .= ', ' . $this->get_single_breadcrumb_markup( $term->name, get_term_link( $term ), true, false );
-				} else {
-					$terms_markup .= ', ' . $this->get_single_breadcrumb_markup( $term->name, get_term_link( $term ), false, false );
-				}
+                if ( ++ $i == $max_index ) {
+                    $terms_markup .= ', ' . $this->get_single_breadcrumb_markup( $term->name, get_term_link( $term ), true, false );
+                } else {
+                    $terms_markup .= ', ' . $this->get_single_breadcrumb_markup( $term->name, get_term_link( $term ), false, false );
+                }
 			}
 		}
 

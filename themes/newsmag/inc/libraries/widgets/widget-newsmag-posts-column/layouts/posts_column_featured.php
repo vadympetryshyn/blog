@@ -30,7 +30,7 @@ if ( $posts->have_posts() ) :
 						<?php
 						if ( ! empty( $instance['title'] ) ) {
 							?>
-							<span><?php echo esc_html( $instance['title'] ); ?></span>
+							<a href="<?php echo esc_url( get_category_link( $category[0]->term_id ) ); ?>"><?php echo esc_html( $instance['title'] ); ?></a>
 							<?php
 						} else {
 							?>

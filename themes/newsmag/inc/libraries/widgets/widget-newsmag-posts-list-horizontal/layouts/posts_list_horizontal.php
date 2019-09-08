@@ -14,7 +14,7 @@ if ( ! defined( 'WPINC' ) ) {
 				<?php
 				if ( ! empty( $instance['title'] ) ) {
 					?>
-                    <span><?php echo esc_html( $instance['title'] ); ?></span>
+                    <a href="<?php echo esc_url( get_category_link( $idObj->term_id ) ) ?>"><?php echo esc_html( $instance['title'] ); ?></a>
 					<?php
 				} else {
 					?>

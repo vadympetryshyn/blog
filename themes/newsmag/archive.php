@@ -34,7 +34,7 @@ if ( ! empty( $img ) ) :
 						elseif ( is_category() ) :
 							the_archive_title();
 						else :
-							single_tag_title( __( 'Tags archive: ', 'newsmag' ) );
+							single_tag_title( __( '', 'newsmag' ) );
 						endif;
 						?>
 					</h1>
